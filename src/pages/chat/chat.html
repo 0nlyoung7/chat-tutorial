@@ -17,6 +17,7 @@
       <div *ngIf=" message.text ">
         <span>{{message.text}}</span>
       </div>
+      <span class="time">{{message.createdAt| date:"hh:mm:ss" }}</span>
 	  </li>
   </ol>
 </ion-content>

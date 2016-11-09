@@ -4,7 +4,7 @@
       Search User
     </ion-title>
     <ion-buttons end>
-      <button ion-button color="royal" (click)="confirm();">{{btnNm}}</button>
+      <button ion-button color="royal" (click)="confirm();">Add</button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
@@ -12,12 +12,5 @@
 <ion-content>
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-list >
-    <ion-item *ngFor="let user of users;">
-      <ion-checkbox color="primary" checked="false" [(ngModel)]="checkedList[user.id]"></ion-checkbox>
-      <ion-avatar item-left>
-        <img src="{{user.avatar}}" />
-      </ion-avatar>
-      <ion-label>{{user.nickName}}</ion-label>
-    </ion-item>
   </ion-list>
 </ion-content>

@@ -21,15 +21,7 @@ export class SignInPage {
     this.pushPage = SignUpPage;
   }
 
-  public signIn(){
+  public signIn =()=> {
     var self = this;
-
-    // Code here
-    // stalk을 이용해서 로그인 구현하기
-    self.gotoMain();
-  }
-
-  private gotoMain(){
-    this.navCtrl.push(TabsPage, {});  
   }
 }

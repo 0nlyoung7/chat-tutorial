@@ -10,17 +10,6 @@ import { SharedService } from '../../app/sharedService';
 })
 export class SignUpPage {
 
-  username: string;
-  password: string;
-
-  // Alert 을 위한 alertCtrl 을 추가함
   constructor(public navCtrl: NavController, public ss: SharedService, public alertCtrl: AlertController) {
-  }
-
-  public signUp(){
-    var self = this;
-
-    // stalk을 이용해서 회원가입 구현하기
-    // 회원가입이 완료되면 이전 페이지로 돌아가기
   }
 }

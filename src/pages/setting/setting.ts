@@ -42,6 +42,7 @@ export class SettingPage {
     var self = this;
 
     // Code here
-    // LogOut
+    // stalk-im을 이용하여 로그아웃하기
+    // 화면을 root로 이동하기
   }
 }

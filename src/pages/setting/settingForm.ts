@@ -25,7 +25,8 @@ export class SettingFormPage {
     var self = this;
 
     // Code here
-    // stalk을 이용하여 사용자 정보 수정하기
+    // stalk-im을 이용하여 사용자 정보 수정하기
+    // 수정완료후 창닫기
   }
 
   public clearValue(){
