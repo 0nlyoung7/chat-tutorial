@@ -16,9 +16,11 @@ export class SearchUserPage {
   timeout:any;
   checkedList: any = {};
   callback: any;
+  btnNm: string;
 
   constructor(public navCtrl: NavController, public ss: SharedService, private app:App, private navParams: NavParams) {
     this.callback = navParams.get('callback');
+    this.btnNm = navParams.get('btnNm') ? navParams.get('btnNm') : "OK";
   }
 
   getItems(ev: any) {
@@ -27,29 +29,29 @@ export class SearchUserPage {
     // set val to the value of the searchbar
     let val = ev.target.value;
 
-    var data = {
-      keyword: val,
-      pageNumber: 1
-    };
-
     if( this.timeout )clearTimeout(this.timeout);
     this.timeout = setTimeout(function(){
 
-      // Code here
-      // stalk의 함수를 이용해서 사용자 검색을 구현하기
+      self.ss.stalk.searchUsers( val, function( err, users ){
+        self.users = users;
+      });
 
     }, 200 );
   }
 
-  addFollow = () => {
+  confirm = () => {
     var self = this;
 
+    var checkUserIds = [];
     for( var userId in this.checkedList ){
       if( this.checkedList[userId] ){
-        // Code here
-        // stalk의 함수를 이용해서 Follow를 추가하기
-        // 추가에 성공하면 callback 함수를 호출하고, pop 닫기
+        checkUserIds.push( userId );
       }
     }
+
+    if( self.callback ){
+      self.callback(checkUserIds);
+    }
+    self.navCtrl.pop();
   }
 }

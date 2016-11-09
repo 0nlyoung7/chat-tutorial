@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild, Renderer } from '@angular/core';
 
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Content } from 'ionic-angular';
 
 import {SharedService} from '../../app/sharedService';
 
@@ -12,7 +12,9 @@ export class ChatPage {
 
   inputMessage: any;
   messages:any[] = [];
+  channel:any;
 
+  @ViewChild(Content) content: Content;
   @ViewChild('fileInput') fileInput:ElementRef;
 
   constructor(private renderer: Renderer, public navCtrl: NavController, public ss: SharedService, private navParams: NavParams) {

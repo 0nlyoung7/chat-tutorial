@@ -12,10 +12,10 @@ import {SharedService} from '../../app/sharedService';
 })
 export class SignInPage {
 
-  userId: any;
-  password: any;
+  username: string;
+  password: string;
 
-  private pushPage: any;
+  pushPage: any;
 
   constructor(public navCtrl: NavController, public ss: SharedService, public alertCtrl: AlertController) {
     this.pushPage = SignUpPage;

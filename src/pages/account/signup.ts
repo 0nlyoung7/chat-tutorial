@@ -10,8 +10,8 @@ import { SharedService } from '../../app/sharedService';
 })
 export class SignUpPage {
 
-  userId: any;
-  password: any;
+  username: string;
+  password: string;
 
   // Alert 을 위한 alertCtrl 을 추가함
   constructor(public navCtrl: NavController, public ss: SharedService, public alertCtrl: AlertController) {

@@ -26,27 +26,24 @@ export class FollowsPage {
   }
 
   public gotoChat = (user) => {
-    var paramChat = {users:[user]};
-    this.app.getRootNav().push(ChatPage, {paramChat:paramChat});
+    this.app.getRootNav().push(ChatPage, {users:[user]});
   }
 
-  public openSearchUser = () =>{
-    this.app.getRootNav().push(SearchUserPage, {callback:this.refreshFollow});
+  public openSearchUser = () => {
+    this.app.getRootNav().push(SearchUserPage, {callback:this.addFollow, btnNm:"Add"});
   }
 
-  public refreshFollow = () => {
+  public addFollow = (userIds) => {
     var self = this;
 
-
     // Code here
-    // stalk을 이용해서 친구 목록 조회하기
-    // 친구목록 조회 결과를 화면에 매핑하기
+    // 친구 등록하기
   }
 
   removeFollow(user, inx){
     var self = this;
 
     // Code here
-    // stalk : remove follow
+    // 친구목록에서 삭제하기
   }
 }

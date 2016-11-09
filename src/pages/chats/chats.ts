@@ -21,7 +21,7 @@ export class ChatsPage {
     // stalk을 이용하여 채팅목록 조회하기
   }
 
-  public gotoChat = (chat) => {
-    this.app.getRootNav().push(ChatPage, {paramChat:chat});
+  public gotoChat = (channel) => {
+    this.app.getRootNav().push(ChatPage, {channelId:channel.channelId, users:channel.users});
   }
 }
